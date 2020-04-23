@@ -36,7 +36,7 @@ namespace SampleLabel
         {
             if (dataGridView1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-                for (int i = 1; i <= 5; i++)
+                for (int i = 1; i < dataGridView1.Columns.Count; i++)
                 {
                     bool curVal = Boolean.Parse(dataGridView1.Rows[e.RowIndex].Cells[i].Value.ToString());
                     dataGridView1.Rows[e.RowIndex].Cells[i].Value = !curVal;
@@ -48,7 +48,7 @@ namespace SampleLabel
         {
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                for (int j = 1; j <= 5; j++)
+                for (int j = 1; j < dataGridView1.Columns.Count; j++)
                 {
                     dataGridView1.Rows[i].Cells[j].Value = value;
                 }

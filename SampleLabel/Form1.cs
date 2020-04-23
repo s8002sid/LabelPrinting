@@ -166,15 +166,23 @@ namespace SampleLabel
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0)
+                return;
             if (e.ColumnIndex == 4)
             {
                 Int32 sum = 0;
                 for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
-                    if (dataGridView1.Rows[i].Cells[4].Value != null)
-                        sum += Int32.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
+                    if (dataGridView1.Rows[i].Cells[e.ColumnIndex].Value != null)
+                        sum += Int32.Parse(dataGridView1.Rows[i].Cells[e.ColumnIndex].Value.ToString());
                 }
                 label3.Text = sum.ToString() + " Stickers will be printed.";
+            }
+            else if (e.ColumnIndex == 5)
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value =
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().ToUpper();
             }
         }
     }
