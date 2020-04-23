@@ -19,8 +19,17 @@ namespace SampleLabel
 
         private void BlankLLabelConfig_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 13; i++)
-                dataGridView1.Rows.Add("ToggleCheck", true, true, true, true, true);
+            if (form1Ref.GetSheetType() == Form1.SheetType.A65)
+            {
+                for (int i = 0; i < 13; i++)
+                    dataGridView1.Rows.Add("ToggleCheck", true, true, true, true, true);
+            }
+            else if (form1Ref.GetSheetType() == Form1.SheetType.A56)
+            {
+                dataGridView1.Columns.Remove("Col5");
+                for (int i = 0; i < 14; i++)
+                    dataGridView1.Rows.Add("ToggleCheck", true, true, true, true);
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

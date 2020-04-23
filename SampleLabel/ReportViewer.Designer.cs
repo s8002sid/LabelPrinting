@@ -29,7 +29,8 @@ namespace SampleLabel
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.LabelReport1 = new SampleLabel.LabelReport();
+            this.LabelReport1 = new SampleLabel.A4_65();
+            this.A4_651 = new SampleLabel.A4_65();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -39,17 +40,24 @@ namespace SampleLabel
             this.crystalReportViewer1.DisplayGroupTree = false;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.LabelReport1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(890, 607);
+            this.crystalReportViewer1.ReportSource = this.A4_651;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1187, 747);
             this.crystalReportViewer1.TabIndex = 0;
+            // 
+            // LabelReport1
+            // 
+            this.LabelReport1.FileName = "rassdk://C:\\Users\\siddjain\\AppData\\Local\\Temp\\temp_46ab50cf-1747-4cb3-ace8-61089d" +
+                "a3951b.rpt";
             // 
             // ReportViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 607);
+            this.ClientSize = new System.Drawing.Size(1187, 747);
             this.Controls.Add(this.crystalReportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ReportViewer";
             this.Text = "ReportViewer";
             this.Load += new System.EventHandler(this.ReportViewer_Load);
@@ -60,6 +68,7 @@ namespace SampleLabel
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private LabelReport LabelReport1;
+        private A4_65 LabelReport1;
+        private A4_65 A4_651;
     }
 }
