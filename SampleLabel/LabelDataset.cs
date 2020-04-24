@@ -1,4 +1,4 @@
-﻿namespace SampleLabel {
+﻿namespace VTBarcode {
     
     
     public partial class LabelDataset {

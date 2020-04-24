@@ -1,4 +1,4 @@
-namespace SampleLabel
+namespace VTBarcode
 {
     partial class BlankLLabelConfig
     {

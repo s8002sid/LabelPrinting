@@ -1,4 +1,4 @@
-namespace SampleLabel
+namespace VTBarcode
 {
     partial class ReportViewer
     {
@@ -29,8 +29,8 @@ namespace SampleLabel
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.LabelReport1 = new SampleLabel.A4_65();
-            this.A4_651 = new SampleLabel.A4_65();
+            this.LabelReport1 = new VTBarcode.A4_65();
+            this.A4_651 = new VTBarcode.A4_65();
             this.SuspendLayout();
             // 
             // crystalReportViewer1

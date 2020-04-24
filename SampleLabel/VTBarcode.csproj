@@ -23,8 +23,9 @@
     <ProjectGuid>{81DB532C-6646-4330-9B5A-92C852FDC56A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleLabel</RootNamespace>
-    <AssemblyName>SampleLabel</AssemblyName>
+    <RootNamespace>VTBarcode</RootNamespace>
+    <AssemblyName>VTBarcode</AssemblyName>
+    <ApplicationIcon>barcode_To9_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -140,6 +141,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="barcode_To9_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

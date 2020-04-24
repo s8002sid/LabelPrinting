@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SampleLabel {
+namespace VTBarcode {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;

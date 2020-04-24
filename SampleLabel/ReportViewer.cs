@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
-namespace SampleLabel
+namespace VTBarcode
 {
     public partial class ReportViewer : Form
     {

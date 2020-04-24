@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleLabel", "SampleLabel\SampleLabel.csproj", "{81DB532C-6646-4330-9B5A-92C852FDC56A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTBarcode", "SampleLabel\VTBarcode.csproj", "{81DB532C-6646-4330-9B5A-92C852FDC56A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
