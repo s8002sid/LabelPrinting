@@ -25,7 +25,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VTBarcode</RootNamespace>
     <AssemblyName>VTBarcode</AssemblyName>
-    <ApplicationIcon>barcode_To9_icon.ico</ApplicationIcon>
+    <ApplicationIcon>barcode_Dk6_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -143,6 +143,7 @@
     <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="barcode_Dk6_icon.ico" />
     <Content Include="barcode_To9_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

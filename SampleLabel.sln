@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VTBarcode", "SampleLabel\VTBarcode.csproj", "{81DB532C-6646-4330-9B5A-92C852FDC56A}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "VTBarcodeSetup", "Setup\VTBarcodeSetup\VTBarcodeSetup.vdproj", "{B159422B-6FE8-4A19-A01E-BD10A077137F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{81DB532C-6646-4330-9B5A-92C852FDC56A}.Release|Any CPU.ActiveCfg = Release|x86
 		{81DB532C-6646-4330-9B5A-92C852FDC56A}.Release|x86.ActiveCfg = Release|x86
 		{81DB532C-6646-4330-9B5A-92C852FDC56A}.Release|x86.Build.0 = Release|x86
+		{B159422B-6FE8-4A19-A01E-BD10A077137F}.Debug|Any CPU.ActiveCfg = Debug
+		{B159422B-6FE8-4A19-A01E-BD10A077137F}.Debug|x86.ActiveCfg = Debug
+		{B159422B-6FE8-4A19-A01E-BD10A077137F}.Release|Any CPU.ActiveCfg = Release
+		{B159422B-6FE8-4A19-A01E-BD10A077137F}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
