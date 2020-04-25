@@ -274,6 +274,8 @@ namespace VTBarcode {
             
             private global::System.Data.DataColumn columnbarcode;
             
+            private global::System.Data.DataColumn columnbarcode_bitmap;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public LabelDataDataTable() {
                 this.TableName = "LabelData";
@@ -347,6 +349,13 @@ namespace VTBarcode {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn barcode_bitmapColumn {
+                get {
+                    return this.columnbarcode_bitmap;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -375,7 +384,7 @@ namespace VTBarcode {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public LabelDataRow AddLabelDataRow(string Name, string MRP, string VRP, string Code1, string Code2, string barcode) {
+            public LabelDataRow AddLabelDataRow(string Name, string MRP, string VRP, string Code1, string Code2, string barcode, byte[] barcode_bitmap) {
                 LabelDataRow rowLabelDataRow = ((LabelDataRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Name,
@@ -383,7 +392,8 @@ namespace VTBarcode {
                         VRP,
                         Code1,
                         Code2,
-                        barcode};
+                        barcode,
+                        barcode_bitmap};
                 rowLabelDataRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLabelDataRow);
                 return rowLabelDataRow;
@@ -414,6 +424,7 @@ namespace VTBarcode {
                 this.columnCode1 = base.Columns["Code1"];
                 this.columnCode2 = base.Columns["Code2"];
                 this.columnbarcode = base.Columns["barcode"];
+                this.columnbarcode_bitmap = base.Columns["barcode_bitmap"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -430,6 +441,8 @@ namespace VTBarcode {
                 base.Columns.Add(this.columnCode2);
                 this.columnbarcode = new global::System.Data.DataColumn("barcode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbarcode);
+                this.columnbarcode_bitmap = new global::System.Data.DataColumn("barcode_bitmap", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbarcode_bitmap);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -652,6 +665,21 @@ namespace VTBarcode {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public byte[] barcode_bitmap {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableLabelData.barcode_bitmapColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'barcode_bitmap\' in table \'LabelData\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLabelData.barcode_bitmapColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsNameNull() {
                 return this.IsNull(this.tableLabelData.NameColumn);
             }
@@ -709,6 +737,16 @@ namespace VTBarcode {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetbarcodeNull() {
                 this[this.tableLabelData.barcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isbarcode_bitmapNull() {
+                return this.IsNull(this.tableLabelData.barcode_bitmapColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setbarcode_bitmapNull() {
+                this[this.tableLabelData.barcode_bitmapColumn] = global::System.Convert.DBNull;
             }
         }
         

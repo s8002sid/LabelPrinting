@@ -29,8 +29,8 @@ namespace VTBarcode
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.LabelReport1 = new VTBarcode.A4_65();
             this.A4_651 = new VTBarcode.A4_65();
+            this.LabelReport1 = new VTBarcode.A4_65();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -57,9 +57,9 @@ namespace VTBarcode
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1187, 747);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReportViewer";
-            this.Text = "ReportViewer";
+            this.Text = "Label Report";
             this.Load += new System.EventHandler(this.ReportViewer_Load);
             this.ResumeLayout(false);
 

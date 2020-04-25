@@ -45,8 +45,13 @@
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Resources\zxing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="barcodeGenerator.cs" />
     <Compile Include="BlankLLabelConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,7 +149,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="barcode_Dk6_icon.ico" />
-    <Content Include="barcode_To9_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -154,4 +158,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /C /Y $(ProjectDir)..\Resources\zxing.dll $(OutDir)</PostBuildEvent>
+  </PropertyGroup>
 </Project>

@@ -19,7 +19,7 @@ namespace VTBarcode
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;           
+            comboBox1.SelectedIndex = 0;
         }
 
         public void SetBlankLabelConfig(DataTable dt)
@@ -80,6 +80,9 @@ namespace VTBarcode
             SheetTypeData sheetData = GetSheetTypeData();
             LabelDataset ld = new LabelDataset();
             int k = 0;
+            Code128 barcodeGenerator = new Code128();
+            byte[] emptyByte = new byte[1];
+            emptyByte[0] = 0;
             for (int i = 0; i <   dataGridView1.Rows.Count-1; i++)
             {
                 string Code1 = "";
@@ -97,6 +100,7 @@ namespace VTBarcode
                 string barcode = "";
                 if (dataGridView1.Rows[i].Cells[5].Value != null)
                     barcode = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                byte[] barcode_bitmap = barcodeGenerator.Generate(barcode);
                 Code1 = GenerateCode(Code1, "5", 100);
                 Code2 = GenerateCode(Code2, "6", 100);
                 VRP = GenerateCode(VRP, "7", 0);
@@ -120,6 +124,7 @@ namespace VTBarcode
                             dr1["Code1"] = "";
                             dr1["Code2"] = "";
                             dr1["barcode"] = "";
+                            dr1["barcode_bitmap"] = emptyByte;
                             ld.Tables["LabelData"].Rows.Add(dr1);
                             k++;
                         }
@@ -135,6 +140,7 @@ namespace VTBarcode
                     dr["Code1"] = Code1;
                     dr["Code2"] = Code2;
                     dr["barcode"] = barcode;
+                    dr["barcode_bitmap"] = barcode_bitmap;
                     ld.Tables["LabelData"].Rows.Add(dr);
                     k++;
                 }
