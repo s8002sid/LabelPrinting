@@ -12,6 +12,7 @@ namespace VTBarcode
     {
         public static LabelDataset _ld;
         public static Form1.SheetType _sheetType;
+        private ReportDocument report;
         public ReportViewer(LabelDataset ld, Form1.SheetType sheetType)
         {
             InitializeComponent();
@@ -20,7 +21,6 @@ namespace VTBarcode
         }
         private void ReportViewer_Load(object sender, EventArgs e)
         {
-            ReportDocument report;
             if (_sheetType == Form1.SheetType.A56)
             {
                 report = new A4_56();
@@ -31,6 +31,11 @@ namespace VTBarcode
             }
             report.SetDataSource(_ld);
             crystalReportViewer1.ReportSource = report;
+        }
+
+        private void ReportViewer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            report.Dispose();
         }
     }
 }

@@ -46,11 +46,6 @@ namespace VTBarcode
             this.crystalReportViewer1.Size = new System.Drawing.Size(1187, 747);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // LabelReport1
-            // 
-            this.LabelReport1.FileName = "rassdk://C:\\Users\\siddjain\\AppData\\Local\\Temp\\temp_46ab50cf-1747-4cb3-ace8-61089d" +
-                "a3951b.rpt";
-            // 
             // ReportViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -61,6 +56,7 @@ namespace VTBarcode
             this.Name = "ReportViewer";
             this.Text = "Label Report";
             this.Load += new System.EventHandler(this.ReportViewer_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ReportViewer_FormClosing);
             this.ResumeLayout(false);
 
         }
