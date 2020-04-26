@@ -128,7 +128,7 @@ namespace VTBarcode
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(641, 13);
+            this.label3.Location = new System.Drawing.Point(694, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 20);
             this.label3.TabIndex = 3;
@@ -138,7 +138,7 @@ namespace VTBarcode
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(434, 13);
+            this.label2.Location = new System.Drawing.Point(487, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(192, 20);
             this.label2.TabIndex = 2;
@@ -148,7 +148,7 @@ namespace VTBarcode
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(159, 13);
+            this.label1.Location = new System.Drawing.Point(212, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 20);
             this.label1.TabIndex = 1;
@@ -162,7 +162,7 @@ namespace VTBarcode
             this.comboBox1.Items.AddRange(new object[] {
             "A4-56",
             "A4-65"});
-            this.comboBox1.Location = new System.Drawing.Point(275, 10);
+            this.comboBox1.Location = new System.Drawing.Point(328, 10);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 28);
             this.comboBox1.TabIndex = 0;
@@ -174,7 +174,7 @@ namespace VTBarcode
             this.button1.Location = new System.Drawing.Point(32, 10);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(140, 28);
             this.button1.TabIndex = 0;
             this.button1.Text = "PrintLabel";
             this.button1.UseVisualStyleBackColor = true;
