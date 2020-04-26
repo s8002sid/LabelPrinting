@@ -169,24 +169,28 @@ namespace VTBarcode
         {
             
         }
-
+        private void CalculateTotal()
+        {
+            Int32 sum = 0;
+            int columnIndex = 4;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[columnIndex].Value != null)
+                {
+                    int result;
+                    Int32.TryParse(dataGridView1.Rows[i].Cells[columnIndex].Value.ToString(), out result);
+                    sum += result;
+                }
+            }
+            label3.Text = sum.ToString() + " Stickers will be printed.";
+        }
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
             if (e.ColumnIndex == 4)
             {
-                Int32 sum = 0;
-                for (int i = 0; i < dataGridView1.RowCount; i++)
-                {
-                    if (dataGridView1.Rows[i].Cells[e.ColumnIndex].Value != null)
-                    {
-                        int result;
-                        Int32.TryParse(dataGridView1.Rows[i].Cells[e.ColumnIndex].Value.ToString(), out result);
-                        sum += result;
-                    }
-                }
-                label3.Text = sum.ToString() + " Stickers will be printed.";
+                CalculateTotal();
             }
             else if (e.ColumnIndex == 5)
             {
@@ -288,6 +292,11 @@ namespace VTBarcode
                 }
             }
             return copyValues;
+        }
+
+        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            CalculateTotal();
         }
     }
 }
