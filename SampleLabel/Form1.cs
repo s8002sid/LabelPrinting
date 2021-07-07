@@ -44,11 +44,13 @@ namespace VTBarcode
             }
             return retVal;
         }
-        public enum SheetType { A65, A56 };
+        public enum SheetType { A65, A56, A56_New };
         public SheetType GetSheetType()
         {
             if (comboBox1.Text == "A4-56")
                 return SheetType.A56;
+            else if (comboBox1.Text == "A4-56-New")
+                return SheetType.A56_New;
             else
                 return SheetType.A65;
         }
@@ -63,6 +65,7 @@ namespace VTBarcode
             switch (GetSheetType())
             {
                 case SheetType.A56:
+                case SheetType.A56_New:
                     data.rows = 14;
                     data.cols = 4;
                     break;

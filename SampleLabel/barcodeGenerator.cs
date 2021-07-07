@@ -14,8 +14,8 @@ namespace VTBarcode
         private const BarcodeFormat DEFAULT_BARCODE_FORMAT = BarcodeFormat.CODE_128;
         private static readonly ImageFormat DEFAULT_IMAGE_FORMAT = ImageFormat.Bmp;
         private const String DEFAULT_OUTPUT_FILE = "out";
-        private const int DEFAULT_WIDTH = 2715;
-        private const int DEFAULT_HEIGHT = 300;
+        private const int DEFAULT_WIDTH = 813;
+        private const int DEFAULT_HEIGHT = 90;
         public byte[] Generate(string toEncode)
         {
             BarcodeFormat barcodeFormat = DEFAULT_BARCODE_FORMAT;

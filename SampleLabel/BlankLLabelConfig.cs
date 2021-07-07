@@ -24,7 +24,7 @@ namespace VTBarcode
                 for (int i = 0; i < 13; i++)
                     dataGridView1.Rows.Add("ToggleCheck", true, true, true, true, true);
             }
-            else if (form1Ref.GetSheetType() == Form1.SheetType.A56)
+            else if (form1Ref.GetSheetType() == Form1.SheetType.A56 || form1Ref.GetSheetType() == Form1.SheetType.A56_New)
             {
                 dataGridView1.Columns.Remove("Col5");
                 for (int i = 0; i < 14; i++)
