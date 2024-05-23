@@ -44,13 +44,17 @@ namespace VTBarcode
             }
             return retVal;
         }
-        public enum SheetType { A65, A56, A56_New };
+        public enum SheetType { A65, A56, A56_New, _25x50, _100x25 };
         public SheetType GetSheetType()
         {
             if (comboBox1.Text == "A4-56")
                 return SheetType.A56;
             else if (comboBox1.Text == "A4-56-New")
                 return SheetType.A56_New;
+            else if (comboBox1.Text == "100x25")
+                return SheetType._100x25;
+            else if (comboBox1.Text == "50x25")
+                return SheetType._25x50;
             else
                 return SheetType.A65;
         }
@@ -72,6 +76,14 @@ namespace VTBarcode
                 case SheetType.A65:
                     data.rows = 13;
                     data.cols = 5;
+                    break;
+                case SheetType._100x25:
+                    data.rows = 1;
+                    data.cols = 2;
+                    break;
+                case SheetType._25x50:
+                    data.rows = 1;
+                    data.cols = 1;
                     break;
             }
             return data;
@@ -114,26 +126,29 @@ namespace VTBarcode
                 int numLabels = Int32.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                 for (int j = 0; j < numLabels; j++)
                 {
-                    while (k <= sheetData.rows*sheetData.cols-1)
+                    if (sheetData.rows != 1 && (sheetData.cols != 1 || sheetData.cols != 2))
                     {
-                        int row = k / sheetData.cols;
-                        int col = k % sheetData.cols;
-                        if (!Boolean.Parse(blankLabelConfig.Rows[row][col + 1].ToString()))
+                        while (k <= sheetData.rows * sheetData.cols - 1)
                         {
-                            DataRow dr1 = ld.Tables["LabelData"].NewRow();
-                            dr1["Name"] = "";
-                            dr1["MRP"] = "";
-                            dr1["VRP"] = ""; ;
-                            dr1["Code1"] = "";
-                            dr1["Code2"] = "";
-                            dr1["barcode"] = "";
-                            dr1["barcode_bitmap"] = emptyByte;
-                            ld.Tables["LabelData"].Rows.Add(dr1);
-                            k++;
-                        }
-                        else
-                        {
-                            break;
+                            int row = k / sheetData.cols;
+                            int col = k % sheetData.cols;
+                            if (!Boolean.Parse(blankLabelConfig.Rows[row][col + 1].ToString()))
+                            {
+                                DataRow dr1 = ld.Tables["LabelData"].NewRow();
+                                dr1["Name"] = "";
+                                dr1["MRP"] = "";
+                                dr1["VRP"] = ""; ;
+                                dr1["Code1"] = "";
+                                dr1["Code2"] = "";
+                                dr1["barcode"] = "";
+                                dr1["barcode_bitmap"] = emptyByte;
+                                ld.Tables["LabelData"].Rows.Add(dr1);
+                                k++;
+                            }
+                            else
+                            {
+                                break;
+                            }
                         }
                     }
                     DataRow dr = ld.Tables["LabelData"].NewRow();

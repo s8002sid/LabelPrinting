@@ -16,14 +16,14 @@ namespace VTBarcode {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class A4_65 : ReportClass {
+    public class Crystal_Report125x50 : ReportClass {
         
-        public A4_65() {
+        public Crystal_Report125x50() {
         }
         
         public override string ResourceName {
             get {
-                return "A4_65.rpt";
+                return "25x50.rpt";
             }
             set {
                 // Do nothing
@@ -72,9 +72,9 @@ namespace VTBarcode {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedA4_65 : Component, ICachedReport {
+    public class CachedCrystal_Report125x50 : Component, ICachedReport {
         
-        public CachedA4_65() {
+        public CachedCrystal_Report125x50() {
         }
         
         [Browsable(false)]
@@ -111,7 +111,7 @@ namespace VTBarcode {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            A4_65 rpt = new A4_65();
+            Crystal_Report125x50 rpt = new Crystal_Report125x50();
             rpt.Site = this.Site;
             return rpt;
         }

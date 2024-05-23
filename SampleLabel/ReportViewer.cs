@@ -29,6 +29,14 @@ namespace VTBarcode
             {
                 report = new A4_56_New();
             }
+            else if (_sheetType == Form1.SheetType._100x25)
+            {
+                report = new Crystal_Report1100x25();
+            }
+            else if (_sheetType == Form1.SheetType._25x50)
+            {
+                report = new Crystal_Report125x50();
+            }
             else
             {
                 report = new A4_65();

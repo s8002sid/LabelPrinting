@@ -67,6 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="25x50.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>25x50.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="barcodeGenerator.cs" />
     <Compile Include="BlankLLabelConfig.cs">
       <SubType>Form</SubType>
@@ -82,6 +88,12 @@
     </Compile>
     <Compile Include="A4_56_New.cs">
       <DependentUpon>A4_56_New.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="100x25.cs">
+      <DependentUpon>100x25.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -109,6 +121,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="25x50.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>25x50.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="BlankLLabelConfig.resx">
       <SubType>Designer</SubType>
       <DependentUpon>BlankLLabelConfig.cs</DependentUpon>
@@ -120,6 +136,10 @@
     <EmbeddedResource Include="A4_56_New.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>A4_56_New.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="100x25.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>100x25.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <SubType>Designer</SubType>
