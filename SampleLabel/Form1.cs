@@ -44,7 +44,7 @@ namespace VTBarcode
             }
             return retVal;
         }
-        public enum SheetType { A65, A56, A56_New, _25x50, _100x25 };
+        public enum SheetType { A65, A56, A56_New, OnlyName, _100x25 };
         public SheetType GetSheetType()
         {
             if (comboBox1.Text == "A4-56")
@@ -53,8 +53,8 @@ namespace VTBarcode
                 return SheetType.A56_New;
             else if (comboBox1.Text == "100x25")
                 return SheetType._100x25;
-            else if (comboBox1.Text == "50x25")
-                return SheetType._25x50;
+            else if (comboBox1.Text == "OnlyName")
+                return SheetType.OnlyName;
             else
                 return SheetType.A65;
         }
@@ -81,9 +81,9 @@ namespace VTBarcode
                     data.rows = 1;
                     data.cols = 2;
                     break;
-                case SheetType._25x50:
+                case SheetType.OnlyName:
                     data.rows = 1;
-                    data.cols = 1;
+                    data.cols = 2;
                     break;
             }
             return data;
@@ -118,7 +118,10 @@ namespace VTBarcode
                 string itemName = "";
                 if (dataGridView1.Rows[i].Cells[6].Value != null)
                     itemName = dataGridView1.Rows[i].Cells[6].Value.ToString();
-                byte[] barcode_bitmap = barcodeGenerator.Generate(barcode);
+
+                byte[] barcode_bitmap = new byte[10];
+                if (GetSheetType() != SheetType.OnlyName)
+                    barcode_bitmap = barcodeGenerator.Generate(barcode);
                 Code1 = GenerateCode(Code1, "5", 100);
                 Code2 = GenerateCode(Code2, "6", 100);
                 VRP = GenerateCode(VRP, "7", 0);

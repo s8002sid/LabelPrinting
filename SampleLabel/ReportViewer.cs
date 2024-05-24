@@ -33,9 +33,9 @@ namespace VTBarcode
             {
                 report = new Crystal_Report1100x25();
             }
-            else if (_sheetType == Form1.SheetType._25x50)
+            else if (_sheetType == Form1.SheetType.OnlyName)
             {
-                report = new Crystal_Report125x50();
+                report = new OnlyName();
             }
             else
             {
