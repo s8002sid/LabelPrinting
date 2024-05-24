@@ -115,6 +115,9 @@ namespace VTBarcode
                 string barcode = "";
                 if (dataGridView1.Rows[i].Cells[5].Value != null)
                     barcode = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                string itemName = "";
+                if (dataGridView1.Rows[i].Cells[6].Value != null)
+                    itemName = dataGridView1.Rows[i].Cells[6].Value.ToString();
                 byte[] barcode_bitmap = barcodeGenerator.Generate(barcode);
                 Code1 = GenerateCode(Code1, "5", 100);
                 Code2 = GenerateCode(Code2, "6", 100);
@@ -142,6 +145,7 @@ namespace VTBarcode
                                 dr1["Code2"] = "";
                                 dr1["barcode"] = "";
                                 dr1["barcode_bitmap"] = emptyByte;
+                                dr1["item_name"] = "";
                                 ld.Tables["LabelData"].Rows.Add(dr1);
                                 k++;
                             }
@@ -159,6 +163,7 @@ namespace VTBarcode
                     dr["Code2"] = Code2;
                     dr["barcode"] = barcode;
                     dr["barcode_bitmap"] = barcode_bitmap;
+                    dr["item_name"] = itemName;
                     ld.Tables["LabelData"].Rows.Add(dr);
                     k++;
                 }
@@ -210,7 +215,7 @@ namespace VTBarcode
             {
                 CalculateTotal();
             }
-            else if (e.ColumnIndex == 5)
+            else if (e.ColumnIndex == 5 || e.ColumnIndex == 6)
             {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                     dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value =
