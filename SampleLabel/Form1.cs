@@ -123,11 +123,15 @@ namespace VTBarcode
                 if (GetSheetType() != SheetType.OnlyName)
                     barcode_bitmap = barcodeGenerator.Generate(barcode);
                 Code1 = GenerateCode(Code1, "5", 100);
-                Code2 = GenerateCode(Code2, "6", 100);
-                VRP = GenerateCode(VRP, "7", 0);
+                Code2 = GenerateCode(Code2, "6", 0);
+                //VRP = GenerateCode(VRP, "7", 0);
                 if (!MRP.Contains(".") && MRP != "")
                 {
                     MRP = MRP + ".00";
+                }
+                if (!VRP.Contains(".") && VRP != "")
+                {
+                    VRP = VRP + ".00";
                 }
                 int numLabels = Int32.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                 for (int j = 0; j < numLabels; j++)
