@@ -91,7 +91,8 @@ namespace VTBarcode
         private void button1_Click(object sender, EventArgs e)
         {
             BlankLLabelConfig config = new BlankLLabelConfig(this);
-            config.ShowDialog();
+            if (GetSheetType() != SheetType._100x25)
+                config.ShowDialog();
             SheetTypeData sheetData = GetSheetTypeData();
             LabelDataset ld = new LabelDataset();
             int k = 0;
@@ -124,15 +125,15 @@ namespace VTBarcode
                     barcode_bitmap = barcodeGenerator.Generate(barcode);
                 Code1 = GenerateCode(Code1, "5", 100);
                 Code2 = GenerateCode(Code2, "6", 0);
-                //VRP = GenerateCode(VRP, "7", 0);
+                VRP = GenerateCode(VRP, "7", 0);
                 if (!MRP.Contains(".") && MRP != "")
                 {
                     MRP = MRP + ".00";
                 }
-                if (!VRP.Contains(".") && VRP != "")
-                {
-                    VRP = VRP + ".00";
-                }
+                //if (!VRP.Contains(".") && VRP != "")
+                //{
+                //    VRP = VRP + ".00";
+                //}
                 int numLabels = Int32.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                 for (int j = 0; j < numLabels; j++)
                 {
